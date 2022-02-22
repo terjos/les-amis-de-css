@@ -76,3 +76,55 @@ p a:hover {
   color: var(--bs-white-rgb);
   text-decoration: underline;
 }
+
+.conferences {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  justify-content: center;
+}
+
+.conferences-card {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.conferences-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  backface-visibility: hidden;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+  transition-duration: 0.3s;
+}
+
+.conferences-card:hover::before {
+  box-shadow: 3px 3px 10px -4px var(--bs-body-color);
+}
+
+.conferences-card:nth-child(odd):hover::before {
+  box-shadow: 3px 3px 10px -4px var(--bs-body-color);
+  transform: rotate(1deg);
+}
+
+.conferences-card:nth-child(even):hover::before {
+  box-shadow: -3px 3px 10px -4px var(--bs-body-color);
+  transform: rotate(-1deg);
+}
+
+.conferences-date {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+@media (min-width: 576px) {
+  .conferences {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
