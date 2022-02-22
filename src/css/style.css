@@ -123,6 +123,52 @@ p a:hover {
   font-style: italic;
 }
 
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  column-gap: 35px;
+  justify-content: center;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.team-card img {
+  width: 200px;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 4px #fff;
+  transition-timing-function: cubic-bezier(0.57, 0.26, 0.63, 0.87);
+  transition-duration: 0.5s;
+  transform: rotateY(0);
+}
+
+.team-card:hover img {
+  transform: rotateY(6.284rad);
+}
+
+.team-card figcaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.team-card-name {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.team-card-status {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 @media (min-width: 576px) {
   .conferences {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

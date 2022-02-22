@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: resolve(root, "index.html"),
         conferences: resolve(root, "conferences.html"),
+        equipe: resolve(root, "equipe.html"),
       },
     },
   },
